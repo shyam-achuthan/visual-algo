@@ -6,10 +6,12 @@ import { useWorkflow } from '../../contexts/WorkflowContext';
 const Toolbar = ({ onLoadWorkflow }) => {
   const fileInputRef = useRef(null);
   const [showNodeMenu, setShowNodeMenu] = useState(false);
-  const { addNode } = useWorkflow();
+  const { workflow, addNode } = useWorkflow();
 
-  const handleSaveWorkflow = (workflow) => {
-    saveWorkflow(workflow);
+  const handleSaveWorkflow = () => {
+    if (workflow) {
+      saveWorkflow(workflow);
+    }
   };
 
   const handleLoadClick = () => {
@@ -50,19 +52,23 @@ const Toolbar = ({ onLoadWorkflow }) => {
           >
             +
           </button>
-          <div className="h-8 w-px bg-gray-200" /> {/* Divider */}
+
           <button
-            onClick={() => handleSaveWorkflow()}
-            className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm"
+            onClick={handleSaveWorkflow}
+            className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 text-sm"
+            title="Save Workflow"
           >
             Save Workflow
           </button>
+
           <button
             onClick={handleLoadClick}
-            className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded text-sm"
+            className="px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 text-sm"
+            title="Load Workflow"
           >
             Load Workflow
           </button>
+
           <input
             ref={fileInputRef}
             type="file"
@@ -72,17 +78,15 @@ const Toolbar = ({ onLoadWorkflow }) => {
           />
         </div>
       </div>
+
       {showNodeMenu && (
-        <>
-          <div
-            className="fixed inset-0 z-20"
-            onClick={() => setShowNodeMenu(false)}
-          />
-          <NodeCreationMenu
-            onNodeSelect={handleAddNode}
-            onClose={() => setShowNodeMenu(false)}
-          />
-        </>
+        <NodeCreationMenu
+          onNodeSelect={(nodeType) => {
+            handleAddNode(nodeType);
+            setShowNodeMenu(false);
+          }}
+          onClose={() => setShowNodeMenu(false)}
+        />
       )}
     </div>
   );
