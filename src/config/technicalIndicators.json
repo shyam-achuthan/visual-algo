@@ -1,0 +1,176 @@
+{
+  "technical": {
+    "ema": {
+      "type": "ema",
+      "label": "EMA",
+      "icon": "📈",
+      "category": "technical",
+      "description": "Exponential Moving Average",
+      "inputs": [{ "id": "prices", "type": "input", "label": "Price Data" }],
+      "outputs": [{ "id": "ema", "type": "output", "label": "EMA Values" }],
+      "configFields": [
+        {
+          "id": "period",
+          "type": "number",
+          "label": "Period",
+          "defaultValue": 14,
+          "min": 1,
+          "max": 200
+        },
+        {
+          "id": "source",
+          "type": "select",
+          "label": "Source",
+          "options": ["close", "open", "high", "low", "volume"],
+          "defaultValue": "close"
+        },
+        {
+          "id": "useAdjusted",
+          "type": "boolean",
+          "label": "Use Adjusted Prices",
+          "defaultValue": true
+        }
+      ]
+    },
+    "rsi": {
+      "type": "rsi",
+      "label": "RSI",
+      "icon": "⚖️",
+      "inputs": [{ "id": "prices", "type": "input", "label": "Price Data" }],
+      "outputs": [{ "id": "rsi", "type": "output", "label": "RSI Values" }],
+      "configFields": [
+        {
+          "id": "period",
+          "type": "number",
+          "label": "Period",
+          "defaultValue": 14
+        },
+        {
+          "id": "source",
+          "type": "select",
+          "label": "Source",
+          "options": ["close", "open", "high", "low"],
+          "defaultValue": "close"
+        },
+        {
+          "id": "overbought",
+          "type": "number",
+          "label": "Overbought Level",
+          "defaultValue": 70
+        },
+        {
+          "id": "oversold",
+          "type": "number",
+          "label": "Oversold Level",
+          "defaultValue": 30
+        }
+      ]
+    },
+    "macd": {
+      "type": "macd",
+      "label": "MACD",
+      "icon": "📉",
+      "inputs": [{ "id": "prices", "type": "input", "label": "Price Data" }],
+      "outputs": [
+        { "id": "macd", "type": "output", "label": "MACD Line" },
+        { "id": "signal", "type": "output", "label": "Signal Line" },
+        { "id": "histogram", "type": "output", "label": "Histogram" }
+      ],
+      "configFields": [
+        {
+          "id": "fastPeriod",
+          "type": "number",
+          "label": "Fast Period",
+          "defaultValue": 12
+        },
+        {
+          "id": "slowPeriod",
+          "type": "number",
+          "label": "Slow Period",
+          "defaultValue": 26
+        },
+        {
+          "id": "signalPeriod",
+          "type": "number",
+          "label": "Signal Period",
+          "defaultValue": 9
+        },
+        {
+          "id": "source",
+          "type": "select",
+          "label": "Source",
+          "options": ["close", "open", "high", "low"],
+          "defaultValue": "close"
+        }
+      ]
+    }
+  },
+  "oscillators": {
+    "stochastic": {
+      "type": "stochastic",
+      "label": "Stochastic",
+      "icon": "🎯",
+      "inputs": [{ "id": "prices", "type": "input", "label": "OHLC Data" }],
+      "outputs": [
+        { "id": "k", "type": "output", "label": "%K Line" },
+        { "id": "d", "type": "output", "label": "%D Line" }
+      ],
+      "configFields": [
+        {
+          "id": "kPeriod",
+          "type": "number",
+          "label": "%K Period",
+          "defaultValue": 14
+        },
+        {
+          "id": "dPeriod",
+          "type": "number",
+          "label": "%D Period",
+          "defaultValue": 3
+        },
+        {
+          "id": "smooth",
+          "type": "number",
+          "label": "Smooth",
+          "defaultValue": 3
+        }
+      ]
+    }
+  },
+  "volume": {
+    "obv": {
+      "type": "obv",
+      "label": "OBV",
+      "icon": "📦",
+      "inputs": [
+        { "id": "prices", "type": "input", "label": "Price & Volume" }
+      ],
+      "outputs": [{ "id": "obv", "type": "output", "label": "OBV Values" }],
+      "configFields": [
+        {
+          "id": "source",
+          "type": "select",
+          "label": "Price Source",
+          "options": ["close", "open", "high", "low"],
+          "defaultValue": "close"
+        }
+      ]
+    },
+    "vwap": {
+      "type": "vwap",
+      "label": "VWAP",
+      "icon": "⚖️",
+      "inputs": [{ "id": "prices", "type": "input", "label": "OHLCV Data" }],
+      "outputs": [{ "id": "vwap", "type": "output", "label": "VWAP Values" }],
+      "configFields": [
+        {
+          "id": "period",
+          "type": "select",
+          "label": "Reset Period",
+          "options": ["session", "daily", "weekly", "monthly"],
+          "defaultValue": "daily"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "messengers": {
+    "telegramSendMessage": {
+      "type": "telegramSendMessage",
+      "label": "Send Message",
+      "icon": "✉️",
+      "category": "messengers",
+      "description": "Send a message via Telegram bot",
+      "inputs": [
+        {"id": "trigger", "type": "input", "label": "Trigger"},
+        {"id": "message", "type": "input", "label": "Message"}
+      ],
+      "outputs": [
+        {"id": "messageId", "type": "output", "label": "Message ID"},
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": [
+        {
+          "id": "chatId",
+          "type": "string",
+          "label": "Chat ID",
+          "defaultValue": "",
+          "placeholder": "Enter Telegram chat ID"
+        },
+        {
+          "id": "parseMode",
+          "type": "select",
+          "label": "Parse Mode",
+          "options": ["HTML", "Markdown", "None"],
+          "defaultValue": "None"
+        },
+        {
+          "id": "disableNotification",
+          "type": "boolean",
+          "label": "Disable Notification",
+          "defaultValue": false
+        }
+      ]
+    },
+    "telegramSendPhoto": {
+      "type": "telegramSendPhoto",
+      "label": "Send Photo",
+      "icon": "🖼️",
+      "category": "messengers",
+      "description": "Send a photo via Telegram bot",
+      "inputs": [
+        {"id": "trigger", "type": "input", "label": "Trigger"},
+        {"id": "photoUrl", "type": "input", "label": "Photo URL"},
+        {"id": "caption", "type": "input", "label": "Caption"}
+      ],
+      "outputs": [
+        {"id": "messageId", "type": "output", "label": "Message ID"},
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": [
+        {
+          "id": "chatId",
+          "type": "string",
+          "label": "Chat ID",
+          "defaultValue": "",
+          "placeholder": "Enter Telegram chat ID"
+        },
+        {
+          "id": "parseMode",
+          "type": "select",
+          "label": "Parse Mode",
+          "options": ["HTML", "Markdown", "None"],
+          "defaultValue": "None"
+        },
+        {
+          "id": "disableNotification",
+          "type": "boolean",
+          "label": "Disable Notification",
+          "defaultValue": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "start": {
+    "type": "start",
+    "label": "Start",
+    "icon": "▶️",
+    "inputs": [],
+    "outputs": [{"id": "out", "type": "output", "label": "Output"}],
+    "configFields": [
+      {"id": "name", "type": "text", "label": "Name", "defaultValue": "Start Node"}
+    ]
+  },
+  "if": {
+    "type": "if",
+    "label": "If Condition",
+    "icon": "❓",
+    "inputs": [{"id": "in", "type": "input", "label": "Input"}],
+    "outputs": [
+      {"id": "true", "type": "output", "label": "True"},
+      {"id": "false", "type": "output", "label": "False"}
+    ],
+    "configFields": [
+      {"id": "condition", "type": "text", "label": "Condition", "defaultValue": "x > 5"}
+    ]
+  },
+  "action": {
+    "type": "action",
+    "label": "Action",
+    "icon": "⚡",
+    "inputs": [{"id": "in", "type": "input", "label": "Input"}],
+    "outputs": [{"id": "out", "type": "output", "label": "Output"}],
+    "configFields": [
+      {
+        "id": "actionType",
+        "type": "select",
+        "label": "Action Type",
+        "options": ["Log", "Transform", "Send"],
+        "defaultValue": "Log"
+      },
+      {
+        "id": "message",
+        "type": "text",
+        "label": "Message",
+        "defaultValue": "Hello World"
+      }
+    ]
+  }
+}

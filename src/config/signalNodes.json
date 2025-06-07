@@ -1,0 +1,43 @@
+{
+  "crossover": {
+    "type": "crossover",
+    "label": "Crossover",
+    "icon": "↗️",
+    "inputs": [
+      {"id": "line1", "type": "input", "label": "Line 1"},
+      {"id": "line2", "type": "input", "label": "Line 2"}
+    ],
+    "outputs": [{"id": "signal", "type": "output", "label": "Signal"}],
+    "configFields": [
+      {
+        "id": "direction",
+        "type": "select",
+        "label": "Direction",
+        "options": ["above", "below"],
+        "defaultValue": "above"
+      }
+    ]
+  },
+  "threshold": {
+    "type": "threshold",
+    "label": "Threshold",
+    "icon": "⚡",
+    "inputs": [{"id": "value", "type": "input", "label": "Value"}],
+    "outputs": [{"id": "signal", "type": "output", "label": "Signal"}],
+    "configFields": [
+      {
+        "id": "threshold",
+        "type": "number",
+        "label": "Threshold",
+        "defaultValue": 70
+      },
+      {
+        "id": "direction",
+        "type": "select",
+        "label": "Direction",
+        "options": ["above", "below"],
+        "defaultValue": "above"
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "marketData": {
+    "type": "marketData",
+    "label": "Market Data",
+    "icon": "📊",
+    "inputs": [],
+    "outputs": [{ "id": "ohlcv", "type": "output", "label": "OHLCV Data" }],
+    "configFields": [
+      {
+        "id": "url",
+        "type": "text",
+        "label": "Url",
+        "defaultValue": ""
+      },
+      {
+        "id": "symbol",
+        "type": "text",
+        "label": "Symbol",
+        "defaultValue": "BTCUSDT"
+      },
+      {
+        "id": "timeframe",
+        "type": "select",
+        "label": "Timeframe",
+        "options": ["1m", "5m", "15m", "1h", "4h", "1d"],
+        "defaultValue": "1h"
+      },
+      {
+        "id": "limit",
+        "type": "number",
+        "label": "Limit",
+        "defaultValue": 100
+      }
+    ]
+  },
+  "historicalData": {
+    "type": "historicalData",
+    "label": "Historical Data",
+    "icon": "📅",
+    "inputs": [],
+    "outputs": [{ "id": "data", "type": "output", "label": "Historical Data" }],
+    "configFields": [
+      {
+        "id": "source",
+        "type": "text",
+        "label": "Data Source",
+        "defaultValue": "binance"
+      },
+      {
+        "id": "symbol",
+        "type": "text",
+        "label": "Symbol",
+        "defaultValue": "BTCUSDT"
+      },
+      {
+        "id": "startDate",
+        "type": "text",
+        "label": "Start Date",
+        "defaultValue": ""
+      },
+      {
+        "id": "endDate",
+        "type": "text",
+        "label": "End Date",
+        "defaultValue": ""
+      }
+    ]
+  }
+}

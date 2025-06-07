@@ -1,0 +1,151 @@
+{
+  "brokers": {
+    "dhanCreateOrder": {
+      "type": "dhanCreateOrder",
+      "label": "Create Order",
+      "icon": "📈",
+      "category": "brokers",
+      "description": "Place a new order on Dhan",
+      "inputs": [
+        {"id": "trigger", "type": "input", "label": "Trigger"},
+        {"id": "symbol", "type": "input", "label": "Symbol"}
+      ],
+      "outputs": [
+        {"id": "orderId", "type": "output", "label": "Order ID"},
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": [
+        {
+          "id": "orderType",
+          "type": "select",
+          "label": "Order Type",
+          "options": ["MARKET", "LIMIT", "SL", "SL-M"],
+          "defaultValue": "MARKET"
+        },
+        {
+          "id": "transactionType",
+          "type": "select",
+          "label": "Transaction Type",
+          "options": ["BUY", "SELL"],
+          "defaultValue": "BUY"
+        },
+        {
+          "id": "quantity",
+          "type": "number",
+          "label": "Quantity",
+          "defaultValue": 1
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price",
+          "defaultValue": 0
+        },
+        {
+          "id": "triggerPrice",
+          "type": "number",
+          "label": "Trigger Price",
+          "defaultValue": 0
+        },
+        {
+          "id": "product",
+          "type": "select",
+          "label": "Product",
+          "options": ["INTRADAY", "DELIVERY"],
+          "defaultValue": "INTRADAY"
+        }
+      ]
+    },
+    "dhanDeleteOrder": {
+      "type": "dhanDeleteOrder",
+      "label": "Delete Order",
+      "icon": "🗑️",
+      "category": "brokers",
+      "description": "Cancel an existing order on Dhan",
+      "inputs": [
+        {"id": "orderId", "type": "input", "label": "Order ID"}
+      ],
+      "outputs": [
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": []
+    },
+    "dhanUpdateOrder": {
+      "type": "dhanUpdateOrder",
+      "label": "Update Order",
+      "icon": "✏️",
+      "category": "brokers",
+      "description": "Modify an existing order on Dhan",
+      "inputs": [
+        {"id": "orderId", "type": "input", "label": "Order ID"}
+      ],
+      "outputs": [
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": [
+        {
+          "id": "quantity",
+          "type": "number",
+          "label": "New Quantity",
+          "defaultValue": 1
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "New Price",
+          "defaultValue": 0
+        },
+        {
+          "id": "triggerPrice",
+          "type": "number",
+          "label": "New Trigger Price",
+          "defaultValue": 0
+        }
+      ]
+    },
+    "dhanClosePositions": {
+      "type": "dhanClosePositions",
+      "label": "Close All Positions",
+      "icon": "🔒",
+      "category": "brokers",
+      "description": "Close all open positions on Dhan",
+      "inputs": [
+        {"id": "trigger", "type": "input", "label": "Trigger"}
+      ],
+      "outputs": [
+        {"id": "status", "type": "output", "label": "Status"}
+      ],
+      "configFields": [
+        {
+          "id": "productType",
+          "type": "select",
+          "label": "Product Type",
+          "options": ["INTRADAY", "DELIVERY", "ALL"],
+          "defaultValue": "ALL"
+        }
+      ]
+    },
+    "dhanGetPositions": {
+      "type": "dhanGetPositions",
+      "label": "Get Positions",
+      "icon": "📋",
+      "category": "brokers",
+      "description": "Fetch all open positions from Dhan",
+      "inputs": [
+        {"id": "trigger", "type": "input", "label": "Trigger"}
+      ],
+      "outputs": [
+        {"id": "positions", "type": "output", "label": "Positions"}
+      ],
+      "configFields": [
+        {
+          "id": "productType",
+          "type": "select",
+          "label": "Product Type",
+          "options": ["INTRADAY", "DELIVERY", "ALL"],
+          "defaultValue": "ALL"
+        }
+      ]
+    }
+  }
+}

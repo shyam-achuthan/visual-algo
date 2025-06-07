@@ -1,0 +1,1 @@
+We are building a visual work flo tool to design algos for stock market. features are very similar to the n8n platform .
