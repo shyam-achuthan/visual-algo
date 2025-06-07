@@ -4,6 +4,8 @@ import basicNodes from '../../config/nodeDefinitions.json';
 import { technical as technicalNodes } from '../../config/technicalIndicators.json';
 import dataNodes from '../../config/dataNodes.json';
 import signalNodes from '../../config/signalNodes.json';
+import { brokers as brokerNodes } from '../../config/brokerNodes.json';
+import { messengers as messengerNodes } from '../../config/messengerNodes.json';
 
 // Combine all node definitions
 const nodeDefinitions = {
@@ -11,6 +13,8 @@ const nodeDefinitions = {
   ...technicalNodes,
   ...dataNodes,
   ...signalNodes,
+  ...brokerNodes,
+  ...messengerNodes
 };
 
 const NodeConfigPanel = ({ node, onClose }) => {
@@ -18,6 +22,7 @@ const NodeConfigPanel = ({ node, onClose }) => {
   const definition = nodeDefinitions[node.type];
 
   if (!definition) {
+    console.warn(`No definition found for node type: ${node.type}`);
     return null;
   }
 
@@ -33,12 +38,17 @@ const NodeConfigPanel = ({ node, onClose }) => {
   const renderConfigField = (field) => {
     switch (field.type) {
       case 'text':
+      case 'string':
       case 'number':
         return (
           <input
-            type={field.type}
+            type={field.type === 'string' ? 'text' : field.type}
             value={node.config?.[field.id] ?? field.defaultValue}
             onChange={(e) => handleConfigChange(field.id, e.target.value)}
+            placeholder={field.placeholder}
+            min={field.min}
+            max={field.max}
+            step={field.step}
             className="w-full px-3 py-2 border rounded-md"
           />
         );
@@ -55,6 +65,20 @@ const NodeConfigPanel = ({ node, onClose }) => {
               </option>
             ))}
           </select>
+        );
+      case 'boolean':
+        return (
+          <label className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={!!node.config?.[field.id]}
+              onChange={(e) => handleConfigChange(field.id, e.target.checked)}
+              className="form-checkbox h-5 w-5"
+            />
+            <span className="text-sm text-gray-600">
+              {field.label}
+            </span>
+          </label>
         );
       default:
         return null;
