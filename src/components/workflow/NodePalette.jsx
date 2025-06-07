@@ -71,19 +71,7 @@ const NodePalette = ({ onAddNode }) => {
 
   return (
     <div className="absolute top-4 left-4 z-20 node-palette">
-      <button
-        className={`
-          w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-white text-2xl
-          transition-all duration-200 hover:scale-110
-          ${isOpen ? "bg-red-500 hover:bg-red-600" : "bg-blue-500 hover:bg-blue-600"}
-        `}
-        onClick={() => setIsOpen(!isOpen)}
-        title={isOpen ? "Close palette" : "Add node"}
-      >
-        <span className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}>
-          +
-        </span>
-      </button>
+    
 
       {isOpen && (
         <div className="absolute top-14 left-0 bg-white rounded-lg shadow-xl border border-gray-200 w-80 max-h-96 overflow-hidden">
