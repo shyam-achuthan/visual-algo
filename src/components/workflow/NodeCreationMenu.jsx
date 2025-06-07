@@ -189,7 +189,7 @@ const NodeCreationMenu = ({ onNodeSelect, onClose }) => {
   };
 
   return (
-    <div className="absolute top-16 left-4 bg-white rounded-lg shadow-lg p-2 z-30 min-w-[200px]">
+    <div className="bg-white rounded-lg shadow-lg p-2 min-w-[200px]">
       {renderContent()}
     </div>
   );

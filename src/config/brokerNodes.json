@@ -7,12 +7,12 @@
       "category": "brokers",
       "description": "Place a new order on Dhan",
       "inputs": [
-        {"id": "trigger", "type": "input", "label": "Trigger"},
-        {"id": "symbol", "type": "input", "label": "Symbol"}
+        { "id": "trigger", "type": "input", "label": "Trigger" },
+        { "id": "symbol", "type": "input", "label": "Symbol" }
       ],
       "outputs": [
-        {"id": "orderId", "type": "output", "label": "Order ID"},
-        {"id": "status", "type": "output", "label": "Status"}
+        { "id": "orderId", "type": "output", "label": "Order ID" },
+        { "id": "status", "type": "output", "label": "Status" }
       ],
       "configFields": [
         {
@@ -62,12 +62,8 @@
       "icon": "🗑️",
       "category": "brokers",
       "description": "Cancel an existing order on Dhan",
-      "inputs": [
-        {"id": "orderId", "type": "input", "label": "Order ID"}
-      ],
-      "outputs": [
-        {"id": "status", "type": "output", "label": "Status"}
-      ],
+      "inputs": [{ "id": "orderId", "type": "input", "label": "Order ID" }],
+      "outputs": [{ "id": "status", "type": "output", "label": "Status" }],
       "configFields": []
     },
     "dhanUpdateOrder": {
@@ -76,12 +72,8 @@
       "icon": "✏️",
       "category": "brokers",
       "description": "Modify an existing order on Dhan",
-      "inputs": [
-        {"id": "orderId", "type": "input", "label": "Order ID"}
-      ],
-      "outputs": [
-        {"id": "status", "type": "output", "label": "Status"}
-      ],
+      "inputs": [{ "id": "orderId", "type": "input", "label": "Order ID" }],
+      "outputs": [{ "id": "status", "type": "output", "label": "Status" }],
       "configFields": [
         {
           "id": "quantity",
@@ -109,12 +101,8 @@
       "icon": "🔒",
       "category": "brokers",
       "description": "Close all open positions on Dhan",
-      "inputs": [
-        {"id": "trigger", "type": "input", "label": "Trigger"}
-      ],
-      "outputs": [
-        {"id": "status", "type": "output", "label": "Status"}
-      ],
+      "inputs": [{ "id": "trigger", "type": "input", "label": "Trigger" }],
+      "outputs": [{ "id": "status", "type": "output", "label": "Status" }],
       "configFields": [
         {
           "id": "productType",
@@ -131,11 +119,9 @@
       "icon": "📋",
       "category": "brokers",
       "description": "Fetch all open positions from Dhan",
-      "inputs": [
-        {"id": "trigger", "type": "input", "label": "Trigger"}
-      ],
+      "inputs": [{ "id": "trigger", "type": "input", "label": "Trigger" }],
       "outputs": [
-        {"id": "positions", "type": "output", "label": "Positions"}
+        { "id": "positions", "type": "output", "label": "Positions" }
       ],
       "configFields": [
         {

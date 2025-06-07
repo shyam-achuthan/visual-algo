@@ -7,12 +7,12 @@
       "category": "messengers",
       "description": "Send a message via Telegram bot",
       "inputs": [
-        {"id": "trigger", "type": "input", "label": "Trigger"},
-        {"id": "message", "type": "input", "label": "Message"}
+        { "id": "trigger", "type": "input", "label": "Trigger" },
+        { "id": "message", "type": "input", "label": "Message" }
       ],
       "outputs": [
-        {"id": "messageId", "type": "output", "label": "Message ID"},
-        {"id": "status", "type": "output", "label": "Status"}
+        { "id": "messageId", "type": "output", "label": "Message ID" },
+        { "id": "status", "type": "output", "label": "Status" }
       ],
       "configFields": [
         {
@@ -44,13 +44,13 @@
       "category": "messengers",
       "description": "Send a photo via Telegram bot",
       "inputs": [
-        {"id": "trigger", "type": "input", "label": "Trigger"},
-        {"id": "photoUrl", "type": "input", "label": "Photo URL"},
-        {"id": "caption", "type": "input", "label": "Caption"}
+        { "id": "trigger", "type": "input", "label": "Trigger" },
+        { "id": "photoUrl", "type": "input", "label": "Photo URL" },
+        { "id": "caption", "type": "input", "label": "Caption" }
       ],
       "outputs": [
-        {"id": "messageId", "type": "output", "label": "Message ID"},
-        {"id": "status", "type": "output", "label": "Status"}
+        { "id": "messageId", "type": "output", "label": "Message ID" },
+        { "id": "status", "type": "output", "label": "Status" }
       ],
       "configFields": [
         {

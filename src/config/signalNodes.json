@@ -4,10 +4,10 @@
     "label": "Crossover",
     "icon": "↗️",
     "inputs": [
-      {"id": "line1", "type": "input", "label": "Line 1"},
-      {"id": "line2", "type": "input", "label": "Line 2"}
+      { "id": "line1", "type": "input", "label": "Line 1" },
+      { "id": "line2", "type": "input", "label": "Line 2" }
     ],
-    "outputs": [{"id": "signal", "type": "output", "label": "Signal"}],
+    "outputs": [{ "id": "signal", "type": "output", "label": "Signal" }],
     "configFields": [
       {
         "id": "direction",
@@ -22,8 +22,8 @@
     "type": "threshold",
     "label": "Threshold",
     "icon": "⚡",
-    "inputs": [{"id": "value", "type": "input", "label": "Value"}],
-    "outputs": [{"id": "signal", "type": "output", "label": "Signal"}],
+    "inputs": [{ "id": "value", "type": "input", "label": "Value" }],
+    "outputs": [{ "id": "signal", "type": "output", "label": "Signal" }],
     "configFields": [
       {
         "id": "threshold",

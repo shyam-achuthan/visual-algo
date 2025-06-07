@@ -3,33 +3,31 @@
     "type": "marketData",
     "label": "Market Data",
     "icon": "📊",
+    "category": "data",
+    "description": "Fetch market data from an API endpoint",
     "inputs": [],
-    "outputs": [{ "id": "ohlcv", "type": "output", "label": "OHLCV Data" }],
+    "outputs": [{ "id": "data", "type": "output", "label": "Market Data" }],
     "configFields": [
       {
         "id": "url",
-        "type": "text",
-        "label": "Url",
-        "defaultValue": ""
+        "type": "string",
+        "label": "API URL",
+        "placeholder": "Enter API endpoint URL",
+        "defaultValue": "https://api.example.com/market-data"
       },
       {
-        "id": "symbol",
-        "type": "text",
-        "label": "Symbol",
-        "defaultValue": "BTCUSDT"
-      },
-      {
-        "id": "timeframe",
+        "id": "method",
         "type": "select",
-        "label": "Timeframe",
-        "options": ["1m", "5m", "15m", "1h", "4h", "1d"],
-        "defaultValue": "1h"
+        "label": "Method",
+        "options": ["GET", "POST"],
+        "defaultValue": "GET"
       },
       {
-        "id": "limit",
-        "type": "number",
-        "label": "Limit",
-        "defaultValue": 100
+        "id": "headers",
+        "type": "text",
+        "label": "Headers (JSON)",
+        "placeholder": "{\n  \"Authorization\": \"Bearer your-token\"\n}",
+        "defaultValue": "{}"
       }
     ]
   },

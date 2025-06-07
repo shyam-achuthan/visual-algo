@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { WorkflowContext } from '../../contexts/WorkflowContext';
+import { WorkflowContext, WorkflowProvider } from '../../contexts/WorkflowContext';
 import { useWorkflowOperations } from '../../hooks/useWorkflowOperations';
 import Canvas from '../canvas/Canvas';
 import NodeComponent from '../nodes/NodeComponent';
@@ -42,7 +42,7 @@ const initialWorkflow = {
   connections: [],
 };
 
-const AlgorithmBuilder = () => {
+const AlgorithmBuilderInner = () => {
   const [workflow, setWorkflow] = useState(initialWorkflow);
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -345,5 +345,13 @@ const Instructions = () => (
     </ul>
   </div>
 );
+
+const AlgorithmBuilder = (props) => {
+  return (
+    <WorkflowProvider>
+      <AlgorithmBuilderInner {...props} />
+    </WorkflowProvider>
+  );
+};
 
 export default AlgorithmBuilder;
