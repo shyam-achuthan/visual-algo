@@ -7,6 +7,8 @@ A powerful, extensible React component that provides a visual, node-based interf
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 
+![DemoImage](public/demo.png)
+
 [Demo](#demo) • [Installation](#installation) • [Usage](#usage) • [Documentation](#documentation) • [Contributing](#contributing)
 
 ## ✨ Features
